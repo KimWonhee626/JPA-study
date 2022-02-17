@@ -20,24 +20,29 @@ public class JpaMain {
         tx.begin();
 
         try {
-//            Member member = new Member();
-//            member.setId(2L);
-//            member.setName("wonhe2");
+            /* JPA CRUD 실습
+            Member member = new Member();
+            member.setId(2L);
+            member.setName("wonhe2");
 
-//            em.persist(member); // 멤버 저장(insert)
+            em.persist(member); // 멤버 저장(insert)
 
-//            Member findMember = em.find(Member.class, 1L); // 멤버 찾기(select)
-//            System.out.println("findMember.getId() = " + findMember.getId());
-//            System.out.println("findMember.getName() = " + findMember.getName());
+            Member findMember = em.find(Member.class, 1L); // 멤버 찾기(select)
+            System.out.println("findMember.getId() = " + findMember.getId());
+            System.out.println("findMember.getName() = " + findMember.getName());
 
-//            em.remove(findMember); // 멤버 삭제
+            em.remove(findMember); // 멤버 삭제
+            */
 
+            /* JPQL 실습
             List<Member> result = em.createQuery("select m from Member as m", Member.class)
                     .getResultList(); // JPQL : Member '객체'를 대상으로 쿼리 수행(객체지향 sql)
 
             for (Member member : result) {
                 System.out.println("member.name = " + member.getName());
             }
+
+            */
 
             tx.commit();
         } catch (Exception e) {
@@ -50,3 +55,4 @@ public class JpaMain {
     }
 
 }
+
